@@ -1,109 +1,228 @@
-body{
+body, html{
     height: 100vh;
-    width: 98vw;
-    background-color: rgb(255, 255, 255);
+    width: 99vw;
     display:grid;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
-header{
-    background-color: rgba(24, 25, 26, 0.87); 
-    
-    /* display: flex; */
-    
-    /* align-items: center; */
+/* encabezado para q se mantenga fijo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    background-color: #333;
+    position: fixed; /* Fija el encabezado */
+    top: 0; /* Lo coloca en la parte superior de la página */
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
+
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#botonesHeader{
+    margin-left: 5vw;
+}
+
+header nav ul li {
+    /* margin-left: - 60px; */
+    margin-right: 1vw;
+    /* width: 6vw; */
+
+}
+
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    white-space: nowrap;
+    font-size: large;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
 a:link{
     
     text-decoration:none;
 }
-#mainComprar{
-    /* margin-top:-6vw; */
-    
-}
-#iniciarSesion{
-    /* background-color: rgb(7, 106, 255); */
+
+/* #iniciarSesion{
     position:absolute;
     top: 30px;
     right: 140px;
     width: 35px;
-    /* left:85%; */
-    /* right: -85%; */
-    /* margin-left: 85%; */
-    /* margin-right: -80%; */
-}
-
-.dropup-menu #dd1{
-    width: 43vw;
-}
-
+} */
 
 nav{
-    float:left;
-    /* margin-top:15vh; */
-    /* bottom:20vh; */
-    margin-left: 2vw;
-    /* display:flex; */
-    
-    margin-bottom: 0vh;
+    float:right;
+    left: -5vw;
 }
-.boton{
-    background-color: rgb(32, 18, 223);
+#btnIniciarSesion{
+    background-color: #333;
     border:2px solid black;
     color:white;
-    padding:0.5em 1em;
-    text-align: right;
-    
+    /* padding:0.5em 1em; */
+    /* text-align: right; */
+    /* width: 4vw; */
 }
 
-.boton:hover{background: green;}
-#btnComenzar{
-    background-color: #111214;
+/* Sección del video de fondo */
+
+.video-section {
+    position: relative;
+    width:99.6vw;
+    height: 95vh;
+    overflow: hidden;
+    margin-left: -1vw;
 }
-.title{
-    /* font-size: 50px; */
-    /* top: 152vw; */
-    /* background-color: rgba(245, 172, 16, 0.801);  */
-    /* -webkit-text-stroke: 0.08rem rgb(15, 8, 8); */
-    /* justify-content:center; */
-    /* margin-top: 8vh; */
-    
-    /* display:flex; */
-    
-}
-#parrafo{
-    font-size: 22px;
-    width: 70%;
-    margin: 0% 15% 0% 15%;
-}
-.text-center{
-    align-items: center;
-}
-@media (max-width:600px) {
-    #title{
-        margin-top: 40px;
-    }
-    #header{
-        margin-bottom: 30px;
-    }
-}
-@media (max-height:600px) {
-    #title{
-        margin-top: 100px;
-    }
-    #header{
-        margin-bottom: 50px;
-    }
-}
-.video{
-    width: 97.5vw;
-    height: 100vh;
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
     
 }
+.textoVideo{
+    position: absolute;
+    transform: translateX(20%);
+    margin-top:30vh;
+    color:white;
+    /* background-color: #e64a19; */
+    
+    z-index: 2;
+}
+.textoPequeño, .textoGrande{
+    color:rgb(255, 255, 255);
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+    font-stretch: extra-expanded;
+    /* margin:2%; */
+    margin-bottom: 5vh;
+    /* font-size: calc(1.2vh + 1vw); */
+    text-shadow: 0.5rem 0.5rem 1rem rgb(107, 43, 1), -0.5rem -0.5rem 1rem rgb(124, 60, 1),0.4rem -0.4rem 1rem rgb(0, 0, 2),-0.4rem 0.4rem 1rem rgb(0, 0, 0);
+    /* font-size:large; */
+}
+.textoPequeño{
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+    font-stretch: expanded;
+
+    width: 50vw;
+    margin-left: 10vw;
+    text-shadow: 0.2rem 0.2rem 0.3rem rgb(182, 74, 2), -0.2rem -0.2rem 0.3rem rgb(165, 80, 0),0.2rem -0.2rem 0.3rem rgb(180, 87, 0),-0.2rem 0.2rem 0.3rem rgb(138, 74, 2);
+}
+.suscribirse-btn {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.suscribirse-btn a {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.suscribirse-btn a:hover {
+    background-color: #e64a19;
+}
+
+/* Sección de niveles */
+.niveles {
+    padding: 50px;
+    text-align: center;
+}
+
+.titulos-niveles {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    transform: translateY(-200%);
+}
+
+.titulos-niveles button {
+    background-color: #333;
+    color: white;
+    padding: 10px 80px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.titulos-niveles button:hover {
+    background-color: #555;
+}
+
+.imagenes-niveles {
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-59%);
+}
+
+.nivel {
+    display: none;
+    width: 100%;
+}
+
+.mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.categoria {
+    position: relative;
+    margin: 10px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.categoria img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.titulo-imagen {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+/* Estilos para los botones activos */
+.titulos-niveles button.activo {
+    background-color: #ff5f03; /* Color de fondo amarillo para el botón activo */
+    color: #333; /* Color del texto */
+}
+
+
 main{
-    width: 97.5vw;
+    width: 98vw;
 }
 footer{
-    width: 98vw;
+    width: 98.5vw;
     min-height: 10vh;
     display: flex;
     align-items: center;
@@ -114,289 +233,22 @@ footer{
     bottom: 0;
 }
 
-/*equipos*/
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-}
-.equipos{
-    margin: 10px 20px;
-    box-shadow: 0 4px 8px 0 rgb(250, 204, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-    width: 25vw;
-}
-.fotos img{
+
+/* --------------perfil ------------------ */
+.progress-container {
     width: 100%;
-    height: auto;
+    background-color: #d6d6d6;
+    border-radius: 5px;
+    overflow: hidden;
 }
-.equipos:hover{
-    border: 1px solid red;
-    transform: rotate(-4deg);
-}
-.pieFoto{
-    text-align: center;
-    text-shadow: 3px 3px 5px rgba(219, 0, 219, 0.801);
-    padding: 10px;
-}
-/* .dropdown-toggle{
-    width: 50%;
-    margin-left: -30%;
-} */
-
-#gifRegistrar{
-    margin-left: 10%;
-}
-/*fin de equipos*/
-
-/* *{
-    margin:0;
-    padding: 0;
-}
-body{
-    min-height: 100%;
-    width: 100%;
-    
-}
-
-
-main{
-    margin:2% 5% 2% 5%;
-}
-.imagen{
-    width: 100%;
-    text-align: center;
-}
-.cartel{
-    /* width: 99.7%; 
-    height: 30vh;
-    min-height: 17rem;
-    margin-top: 5vh;
-    border:2px solid black;
-}
-
-/* 
-main a{
-    background-color: rgb(136, 76, 36);
-    border:2px solid black;
-    color:white;
-    padding:0.5em 1em;
-    text-align: right;
-    
-}
-
-main a:hover{background: green;} 
-
-.lista{
-    margin-left: 20vh;
-    margin-bottom: 16vh;
-}
- */
- .card {
-    background: #fff;
-    transition: .5s;
-    border: 0;
-    margin-bottom: 30px;
-    border-radius: .55rem;
-    position: relative;
-    width: 100%;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
-}
-.chat-app .people-list {
-    width: 280px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 20px;
-    z-index: 7
-}
-
-.chat-app .chat {
-    margin-left: 280px;
-    border-left: 1px solid #eaeaea
-}
-
-.people-list {
-    -moz-transition: .5s;
-    -o-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s
-}
-
-.people-list .chat-list li {
-    padding: 10px 15px;
-    list-style: none;
-    border-radius: 3px
-}
-
-.people-list .chat-list li:hover {
-    background: #efefef;
-    cursor: pointer
-}
-
-.people-list .chat-list li.active {
-    background: #efefef
-}
-
-.people-list .chat-list li .name {
-    font-size: 15px
-}
-
-.people-list .chat-list img {
-    width: 45px;
-    border-radius: 50%
-}
-
-.people-list img {
-    float: left;
-    border-radius: 50%
-}
-
-.people-list .about {
-    float: left;
-    padding-left: 8px
-}
-
-.people-list .status {
-    color: #999;
-    font-size: 13px
-}
-
-.chat .chat-header {
-    padding: 15px 20px;
-    border-bottom: 2px solid #f4f7f6
-}
-
-.chat .chat-header img {
-    float: left;
-    border-radius: 40px;
-    width: 40px
-}
-
-.chat .chat-header .chat-about {
-    float: left;
-    padding-left: 10px
-}
-
-.chat .chat-history {
-    padding: 20px;
-    border-bottom: 2px solid #fff
-}
-
-.chat .chat-history ul {
-    padding: 0
-}
-
-.chat .chat-history ul li {
-    list-style: none;
-    margin-bottom: 30px
-}
-
-.chat .chat-history ul li:last-child {
-    margin-bottom: 0px
-}
-
-.chat .chat-history .message-data {
-    margin-bottom: 15px
-}
-
-.chat .chat-history .message-data img {
-    border-radius: 40px;
-    width: 40px
-}
-
-.chat .chat-history .message-data-time {
-    color: #434651;
-    padding-left: 6px
-}
-
-.chat .chat-history .message {
-    color: #444;
-    padding: 18px 20px;
-    line-height: 26px;
-    font-size: 16px;
-    border-radius: 7px;
-    display: inline-block;
-    position: relative
-}
-
-.chat .chat-history .message:after {
-    bottom: 100%;
-    left: 7%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
+.progress-bar {
     width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-bottom-color: #fff;
-    border-width: 10px;
-    margin-left: -10px
-}
-
-.chat .chat-history .my-message {
-    background: #efefef
-}
-
-.chat .chat-history .my-message:after {
-    bottom: 100%;
-    left: 30px;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-bottom-color: #efefef;
-    border-width: 10px;
-    margin-left: -10px
-}
-
-.chat .chat-history .other-message {
-    background: #e8f1f3;
-    text-align: right
-}
-
-.chat .chat-history .other-message:after {
-    border-bottom-color: #e8f1f3;
-    left: 93%
-}
-
-.chat .chat-message {
-    padding: 20px
-}
-
-.online,
-.offline,
-.me {
-    margin-right: 2px;
-    font-size: 8px;
-    vertical-align: middle
-}
-
-.online {
-    color: #86c541
-}
-
-.offline {
-    color: #e47297
-}
-
-.me {
-    color: #1d8ecd
-}
-
-.float-right {
-    float: right
-}
-
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0
+    height: 30px;
+    background-color: blue;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 5px;
 }
 /* -------------- registro--------------- */
 .form-container {
@@ -406,50 +258,16 @@ main a:hover{background: green;}
 }
 /* ------------------------------------------ */
 @media only screen and (max-width: 767px) {
-    .chat-app .people-list {
-        height: 465px;
-        width: 100%;
-        overflow-x: auto;
-        background: #fff;
-        left: -400px;
-        display: none
-    }
-    .chat-app .people-list.open {
-        left: 0
-    }
-    .chat-app .chat {
-        margin: 0
-    }
-    .chat-app .chat .chat-header {
-        border-radius: 0.55rem 0.55rem 0 0
-    }
-    .chat-app .chat-history {
-        height: 300px;
-        overflow-x: auto
-    }
+    
     .mainRegistrarse form{
         width: 90vw;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-    .chat-app .chat-list {
-        height: 650px;
-        overflow-x: auto
-    }
-    .chat-app .chat-history {
-        height: 600px;
-        overflow-x: auto
-    }
+    
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-    .chat-app .chat-list {
-        height: 480px;
-        overflow-x: auto
-    }
-    .chat-app .chat-history {
-        height: calc(100vh - 350px);
-        overflow-x: auto
-    }
+    
 }
