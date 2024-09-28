@@ -4,20 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Asegúrate de que el nombre del archivo CSS sea correcto -->
-    <link rel="stylesheet" href="estilos-calcularimc.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Calcular IMC - SmartFit</title>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <div class="logo">SmartFit</div>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="calcular_imc.html" class="active">Calcular IMC</a>
-            <a href="login.html">Iniciar sesión</a>
-        </nav>
-    </header>
+        <!-- place navbar here -->
+        
+          <div class="logo">
+            <a href="index.html"> 
+                <img src="./assets/imagenes/LOGO.jpg" alt="smartfit logo" style="height: 80px;">
+            </a>
+          </div>
+    
+          <nav class="navbar navbar-expand-sm col-4 navbar-dark">
+            <div class="container-fluid botonesHeader">             
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="entrenamiento.html">Entrenamiento</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="perfil.html">Perfil</a>
+                  </li>
+                  <li class="navbar-brand">
+                    <a class="nav-link" href="calcular_imc.html">Calcular IMC</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            
+          </nav>
+          
+        
+        
+      </header>
 
     <!-- Sección Calcular IMC -->
     <section class="imc-section">
