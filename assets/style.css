@@ -254,12 +254,23 @@ footer{
     color: white;
     border-radius: 5px;
 }
-/* -------------- registro--------------- */
 .form-container {
     display: flex;
     justify-content: center;
     
 }
+
+.table-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.table-container .title{
+    width: 40vw;
+}
+
+/* -------------- registro--------------- */
+
 .mainRegistrarse, .mainPerfil{
     padding-top: 90px;
 }
