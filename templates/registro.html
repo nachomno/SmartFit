@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>SmartFit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8'i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"/>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <header>
+
+      <div class="logo">
+        <a href="/"> 
+            <img src="../static/imagenes/LOGO.jpg" alt="smartfit logo" style="height: 80px;">
+        </a>
+      </div>
+
+      <nav class="navbar navbar-expand-sm col-4 navbar-dark">
+        <div class="container-fluid botonesHeader">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="entrenamiento.html">Entrenamiento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="perfil.html">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="calcular_imc.html">Calcular IMC</a>
+              </li>
+              <li class="navbar-brand">
+                <a class="nav-link" href="#">Registrarse</a>
+              </li>
+            </ul>
+          </div>
+        </div>    
+      </nav>
+  </header>
+  
+  <main class="mainRegistrarse">
+    
+    <div class="container form-container">
+      <form class="col-6" method="POST" action="/procesar_registro" onsubmit="bienvenida()">
+          <div class="form-group">
+              <label for="inputEmail" class="form-label text-black">Correo Electrónico:</label>
+              <input type="email" class="form-control text-center" id="inputEmail" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="inputContrasena" class="form-label text-black">Contraseña:</label>
+              <input type="password" class="form-control text-center" id="inputContrasena" name="contrasena" required>
+          </div>
+          <div class="form-group">
+              <label for="inputNombre" class="form-label text-black">Nombre:</label>
+              <input type="text" class="form-control col-6" id="inputNombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+              <label for="inputApellido" class="form-label text-black">Apellido:</label>
+              <input type="text" class="form-control col-6" id="inputApellido" name="apellido" required>
+          </div>
+          <div class="form-group">
+            <label for="inputEdad" class="form-label text-black">Edad:</label>
+            <input type="number" class="form-control" id="inputEdad" name="edad" required>
+        </div>
+          <div class="form-group">
+              <label for="inputPeso" class="form-label text-black">Peso (kg):</label>
+              <input type="number" class="form-control" id="inputPeso" name="peso" required>
+          </div>
+          <div class="form-group">
+              <label for="inputAltura" class="form-label text-black">Altura (cm):</label>
+              <input type="number" class="form-control" id="inputAltura" name="altura" required>
+          </div>
+          <div class="form-group">
+              <label class="form-label text-black">¿Ha tenido accidentes?</label>
+              <div class="form-check">
+                  <input type="checkbox" class="form-check-input" name="antecedente_quirurgico">
+                  <input type="text" class="form-control col-11" name="resumen_antecedente_quirurgico" placeholder="Ingrese un resumen de sus accidentes">
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="form-label text-black">¿Tiene alguna complicación médica?</label>
+              <div class="form-check">
+                  <input type="checkbox" class="form-check-input" name="antecedente_medico">
+                  <input type="text" class="form-control col-11" name="resumen_antecedente_medico" placeholder="Ingrese un resumen de sus complicaciones médicas">
+              </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+                <input type="checkbox" id="checkTerms" class="form-check-input">
+                <a href="#" class='link text-decoration-underline'>Acepto los términos y condiciones</a>
+            </div>
+        </div>
+          <div class="col-6 botReg">
+              <button class="btn btn-primary botReg" type="submit" id="dd1" style="width:39vw;">
+                  Registrarse
+              </button>
+          </div>
+      </form>
+  </div>
+
+  </main>
+  
+  <!-- <footer class="bg-dark text-white text-center justify-content-center align-items-center"> -->
+    <!-- place footer here -->
+  <footer class="mt-5 bg-dark">
+    <div class="row justify-content-center">
+      <div class="col-auto mt-5  text-white">
+        <ul
+          class="list-unstyled footer-link footer-social d-flex justify-content-around"
+        >
+          <li>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados @2024</p>
+      </div>
+    
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='bienvenida.js') }}"></script>
+</body>
+
+</html>
